@@ -1,0 +1,33 @@
+.chord-item {
+  position: relative;
+  display: inline-block;
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.overlay-circle {
+  position: absolute;
+  z-index: 1;
+  background-color: rgb(33, 140, 167);
+  border-radius: 50%;
+  display: flex;
+  width: 15px;
+  height: 15px;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.fret-position {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  font-weight: bold;
+}
