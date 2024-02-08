@@ -1,9 +1,9 @@
 // ChordDisplay.jsx
 import React from 'react';
 import DraggableChord from './DraggableChord';
-import { allC } from '../../../chords/C-chords.mjs';
+import { allC } from '../chords/C-chords.mjs';
 import './ChordDisplay.css';
-import { frets } from '../../../chords/Frets.mjs';
+import { frets } from '../chords/Frets.mjs';
 
 export default function ChordDisplay({ selectedOption }) {
   function findChordByName(objectsArray, targetName) {
@@ -16,7 +16,7 @@ export default function ChordDisplay({ selectedOption }) {
     function mapChord(chord) {
       for (let i = 1; i < Object.values(chord).length; i++) {
         const reversedChordLine = (
-          <div key={i} className='chord-line'>
+          <div key={i} className="chord-line">
             {chord[i]
               .slice()
               .reverse()
@@ -168,11 +168,11 @@ export default function ChordDisplay({ selectedOption }) {
   const chunkedChordData = chunkArray(chordData, 4);
 
   return (
-    <div className='grid-container'>
+    <div className="grid-container">
       {chunkedChordData.map((row, rowIndex) => (
         <div key={rowIndex} style={{ display: 'flex' }}>
           {row.map((chord, colIndex) => (
-            <div key={colIndex} className='grid-item'>
+            <div key={colIndex} className="grid-item">
               <DraggableChord chordName={chord} />
             </div>
           ))}

@@ -48,8 +48,8 @@ export default function Signup() {
   };
 
   return (
-    <form className='mt-8 space-y-6' onSubmit={handleSubmit}>
-      <div className=''>
+    <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+      <div className="">
         {fields.map((field) => (
           <Input
             key={field.id}
@@ -64,7 +64,7 @@ export default function Signup() {
             placeholder={field.placeholder}
           />
         ))}
-        <FormAction handleSubmit={handleSubmit} text='Signup' />
+        <FormAction handleSubmit={handleSubmit} text="Signup" />
       </div>
     </form>
   );
