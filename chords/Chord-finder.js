@@ -1,3 +1,5 @@
+import fs from 'fs';
+
 const guitar = [
   [4, 5, 6, 7, 8, 9, 10, 11, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
   [9, 10, 11, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 0, 1, 2, 3, 4],
@@ -90,18 +92,15 @@ function printAllGuitarChords(chord, chords = [], startFret = 0, endFret = 3) {
 }
 
 const everyChord = chordTypes.map((chord) => generateNonCChords(chord));
-console.log(everyChord);
+
+let allChords = [];
 for (let i = 0; i < everyChord.length; i++) {
   for (let j = 0; j < everyChord[i].length; j++)
-    console.log(printAllGuitarChords(everyChord[i][j]));
+    allChords.push(printAllGuitarChords(everyChord[i][j]));
 }
 
-class ChordSet {
-  constructor() {
-    this.chords = [];
-    this.Cchords = [];
-    /// other metadata
-  }
-  addChord() {}
-  findChord() {}
-}
+const allChordsString = JSON.stringify(allChords, null, 1);
+fs.writeFile('allChords.json', allChordsString, (err) => {
+  if (err) throw err;
+  console.log('Output data has been written to output.txt');
+});
